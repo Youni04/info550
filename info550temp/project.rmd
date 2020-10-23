@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo=FALSE)
 
 ```{r}
 
-df <- read.csv("Documents/Emory/Thesis/AID_743085_datatable_all.csv",header = FALSE)
+df <- read.csv("AID_743085_datatable_all.csv",header = FALSE)
 data<-df[7:10492, c(2,28:40,42:43,68:80,82:83,107:119,121:122)]
 
 numberofreplication <- 3
@@ -59,8 +59,7 @@ A summary of the standard deviation of first 50 chemicals is shown in the Table 
 
 ```{r, make-table}
 library(matrixStats)
-library(formattable)
-formattable(colSds(average_value[,1:50]))
+colSds(average_value[,1:50])
 
 
 #peer review
